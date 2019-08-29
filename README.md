@@ -7,6 +7,26 @@ SwiperProxy is a very easy to use HTTP and HTTPS web proxy.
 
 ![SwiperProxy Screenshot](doc/screenshot.png)
 
+Docker image for swiperproxy
+----------------------------
+
+### Building
+
+Run `build.sh`
+
+### Usage
+
+You need to specify some environment settings in order for the container to work properly, namely:
+
+* SP_HOSTNAME - `hostname` in `proxy.conf`
+* SP_HTTP_PORT - `http_port` in `proxy.conf`
+* SP_HTTPS_PORT= `https_port` in `proxy.conf`
+
+Example:
+
+```
+docker run -e SP_HOSTNAME=proxy.example.org -e SP_HTTP_PORT=80 -e SP_HTTPS_PORT=443 -p80:8080 -p443:40443 swiperproxy/swiperproxy
+```
 License
 -------
 
